@@ -99,9 +99,15 @@ any state.
 ## Status & provenance
 
 cogctx v1 is a **draft open for review**. It generalizes the
-`focuslens.cognitive_context/v1` packet shipped by FocusLens, a privacy-first
+`focuslens.cognitive_context/v1` packet shipped by
+[FocusLens](https://github.com/NotGalacticFire/NeuroSense), a privacy-first
 on-device focus engine whose MCP server exposes live cognitive state to AI
 agents. This repo extracts that format so anyone can implement it.
+
+**Conforming producers:**
+- FocusLens — `GET /cogctx` on its loopback API, plus the `get_cogctx_state`
+  MCP tool and `cogctx://state` resource. *(reference producer)*
+- *Yours here — open a PR.*
 
 **Wanted:** producers (wearables, HRV bridges, activity heuristics) and
 consumers (agent frameworks, editors, notifiers). Open an issue with what

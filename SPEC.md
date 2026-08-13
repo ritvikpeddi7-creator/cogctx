@@ -199,7 +199,9 @@ or type. Breaking changes require `cogctx/v2`.
 ## 8. Provenance
 
 cogctx v1 generalizes the `focuslens.cognitive_context/v1` packet shipped by
-[FocusLens](https://github.com/NotGalacticFire), a privacy-first on-device
-focus engine, whose MCP server was (to our knowledge) the first to expose live
-cognitive state to AI agents. This spec extracts that format so any producer
-or consumer can implement it.
+[FocusLens](https://github.com/NotGalacticFire/NeuroSense), a privacy-first
+on-device focus engine, whose MCP server was (to our knowledge) the first to
+expose live cognitive state to AI agents. This spec extracts that format so
+any producer or consumer can implement it. FocusLens is the first conforming
+producer: it serves packets at `GET /cogctx` (alias `GET /v1/context`) and via
+the `get_cogctx_state` MCP tool and `cogctx://state` resource.
