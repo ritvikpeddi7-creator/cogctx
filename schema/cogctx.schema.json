@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/cogctx/cogctx/main/schema/cogctx.schema.json",
+  "title": "cogctx cognitive context packet (v1)",
+  "type": "object",
+  "required": ["schema", "state", "directives", "as_of"],
+  "properties": {
+    "schema": { "const": "cogctx/v1" },
+    "state": {
+      "type": "string",
+      "enum": ["deep_focus", "normal_focus", "distracted", "fatigued", "stressed", "unknown"]
+    },
+    "focus_score": {
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "maximum": 100
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "trend": {
+      "type": "string",
+      "enum": ["improving", "stable", "declining"]
+    },
+    "directives": {
+      "type": "object",
+      "required": ["interrupt_ok"],
+      "properties": {
+        "interrupt_ok": { "type": "boolean" },
+        "verbosity": { "type": "string", "enum": ["terse", "normal", "scaffolded"] },
+        "complexity_budget": { "type": "string", "enum": ["low", "medium", "high"] },
+        "notifications": { "type": "string", "enum": ["silence", "batch", "normal"] },
+        "prefer_small_steps": { "type": "boolean" },
+        "suggest_break": { "type": "boolean" }
+      },
+      "additionalProperties": true
+    },
+    "forecast": {
+      "type": "object",
+      "properties": {
+        "fatigue_eta_minutes": { "type": ["integer", "null"], "minimum": 0 },
+        "note": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "as_of": { "type": "string", "format": "date-time" },
+    "provider": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "version": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "privacy": { "type": "string" }
+  },
+  "additionalProperties": true
+}

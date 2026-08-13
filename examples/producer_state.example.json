@@ -1,0 +1,7 @@
+{
+  "state": "fatigued",
+  "focus_score": 34,
+  "confidence": 0.8,
+  "recent_scores": [58, 52, 47, 41, 38, 34],
+  "provider": { "name": "my-wearable-bridge", "version": "0.0.1" }
+}

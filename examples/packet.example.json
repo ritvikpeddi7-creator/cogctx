@@ -1,0 +1,22 @@
+{
+  "schema": "cogctx/v1",
+  "state": "deep_focus",
+  "focus_score": 82,
+  "confidence": 0.9,
+  "trend": "stable",
+  "directives": {
+    "interrupt_ok": false,
+    "verbosity": "terse",
+    "complexity_budget": "high",
+    "notifications": "silence",
+    "prefer_small_steps": false,
+    "suggest_break": false
+  },
+  "forecast": {
+    "fatigue_eta_minutes": null,
+    "note": "focus stable — no fatigue predicted soon"
+  },
+  "as_of": "2026-08-12T17:03:00Z",
+  "provider": { "name": "focuslens", "version": "1.4.0" },
+  "privacy": "on-device; behavioral metadata only — no keystrokes, text, or app content"
+}
